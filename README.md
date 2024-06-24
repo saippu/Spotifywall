@@ -5,4 +5,4 @@ Currently it is a lot slower than required. Not using ColorThief for the project
 
 Main thing which I have to fix is the speed. The second part is tuning the colors for albums which have a lot of colors.
 
-Applying the wallpaper works only in Linux with sww for now. 
+Applying the wallpaper works only in Linux with swww for now. 
