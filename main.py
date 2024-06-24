@@ -42,7 +42,7 @@ def main():
         img.putdata(ndata)
         img.save("wallpapermodpil.png", "PNG")
         img = Image.open("wallpapermodpil.png")
-        subprocess.Popen(shlex.split(f'swww img /home/Sam/projects/python_projects/spotifywall/wallpapermodpil.png'), stdout=subprocess.PIPE)
+        subprocess.Popen(shlex.split(f'swww img ~/spotifywall/wallpapermodpil.png'), stdout=subprocess.PIPE)
         print(time.time()-start)
 
 while True:
