@@ -28,7 +28,6 @@ def colour_and_brightness(pic):
 
 
 def main():
-        open("colors.txt", "w").close()
         if plugs.artwork() == None:
             pass
         elif plugs.artwork() == '':
