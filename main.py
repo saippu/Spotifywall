@@ -58,14 +58,6 @@ def main():
                     else:
                        search = colour2[colour[bi-1]]
                        ndata.append(search)
-                """if brightt in colour2:
-                    ndata.append(colour2[brightt])
-                else:
-                    search = bisect.bisect_left(colour, brightt)
-                    if search == 0:
-                        ndata.append(colour2[colour[0]])
-                    else:
-                        ndata.append(colour2[colour[search]])"""
             img.putdata(ndata)
             img.save("wallpapermodpil.png", "PNG")
             img = Image.open("wallpapermodpil.png")
