@@ -18,7 +18,7 @@ def resizing(file, name, value):
 
 def colour_and_brightness(pic):
     start = time.time()
-    img = Image.open(pic)
+    img = Image.open(pic).convert("RGB")
     data = img.getdata()
     for i in data:
         bright = (i[0]*299+i[1]*587+i[2]*144) / 1000
