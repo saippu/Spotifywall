@@ -1,7 +1,7 @@
 # Spotifywall
 Wallpaper changes according to the album's color which is currently playing
 
-Not using ColorThief for the project because it gives weird colors when the album is black and white and using Pillow is a lot accurate than ColorThief. The smaller the wallpaper the faster it is to process.
+The smaller the wallpaper the faster it is to process.
 
 Main thing will be tuning the colors for albums which have a lot of colors.
 
