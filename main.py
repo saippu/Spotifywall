@@ -6,7 +6,6 @@ import plugs
 import numpy as np
 import subprocess
 import shlex
-import webcolors
 import bisect
 import argparse
 parser = argparse.ArgumentParser()
