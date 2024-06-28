@@ -1,7 +1,6 @@
 import shutil
 import requests
 from PIL import Image, ImageFilter
-from colorthief import ColorThief
 import time
 import plugs
 import numpy as np
