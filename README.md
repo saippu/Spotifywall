@@ -12,4 +12,4 @@ Project works best with albums which have few colors. For example TV Girl - Love
 Tested on:
 Arch linux with Hyprland
 
-[Image]([url](https://wall.alphacoders.com/big.php?i=1330482)) that is used as an example.
+[Image]([https://wall.alphacoders.com/big.php?i=1330482]) that is used as an example.
