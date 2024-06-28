@@ -9,5 +9,3 @@ Applying the wallpaper works only in Linux with swww for now.
 
 Tested on:
 Arch linux with Hyprland
-
-I use arch btw
