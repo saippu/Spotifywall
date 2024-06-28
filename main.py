@@ -40,7 +40,7 @@ def main(arg1):
             res = requests.get(plugs.artwork(), stream=True)
             with open("somesong.png", 'wb') as f:
                 shutil.copyfileobj(res.raw,f)
-            resizing("somesong.png", "somesong.png", 5) #7 or 6
+            resizing("somesong.png", "somesong.png", 8) #Found this value pretty good for my wallpaper
             colour_and_brightness("somesong.png")
             print(len(colour2))
             img = Image.open(arg1)
