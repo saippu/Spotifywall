@@ -25,7 +25,7 @@ def colour_and_brightness(pic):
     for i in data:
         bright = (i[0]*299+i[1]*587+i[2]*144) / 1000
         color = i[0],i[1],i[2]
-        colour2.update({int(round(bright)): color})
+        colour2.update({round(bright): color})
     print(time.time()-start)
 def main(arg1):
         if plugs.artwork() == None:
@@ -36,6 +36,7 @@ def main(arg1):
             start = time.time()
             latest[0] = plugs.song()
             res = requests.get(plugs.artwork(), stream=True)
+            print("Downloading picture...")
             with open("somesong.png", 'wb') as f:
                 shutil.copyfileobj(res.raw,f)
             resizing("somesong.png", "somesong.png", 8) #Found this value pretty good for my wallpaper
