@@ -41,7 +41,7 @@ def main(arg1):
             resizing("somesong.png", "somesong.png", 8) #Found this value pretty good for my wallpaper
             colour_and_brightness("somesong.png")
             print(len(colour2))
-            img = Image.open(arg1)
+            img = Image.open(arg1).convert("RGBA")
             data = img.getdata()
             ndata = []
             colour = sorted(list(colour2.keys()))
