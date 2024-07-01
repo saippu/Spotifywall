@@ -13,3 +13,5 @@ Tested on:
 Arch linux with Hyprland
 
 The image which is used in the example: https://wall.alphacoders.com/big.php?i=1330482
+
+Wallpaper that I am using with this: https://wall.alphacoders.com/big.php?i=1268195
