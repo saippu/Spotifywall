@@ -8,6 +8,7 @@ import subprocess
 import shlex
 import bisect
 import argparse
+import math
 parser = argparse.ArgumentParser()
 parser.add_argument('-i','--image', default=1,required=True,dest ="image")
 args = vars(parser.parse_args())
@@ -23,9 +24,14 @@ def colour_and_brightness(pic):
     img = Image.open(pic).convert("RGB")
     data = img.getdata()
     for i in data:
-        bright = (i[0]*299+i[1]*587+i[2]*144) / 1000
+        bright = math.floor((i[0]*299+i[1]*587+i[2]*144) / 1000)
         color = i[0],i[1],i[2]
-        colour2.update({round(bright): color})
+        colour2.update({bright: color})
+        owo = [1, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5, 0.45, 0.4, 0.35]
+        for o in owo:
+            bright2 = math.floor((i[0]*o*299+i[1]*o*587+i[2]*o*144) / 1000)
+            color1 = round(i[0]*o), round(i[1]*o), round(i[2]*o)
+            colour2.update({bright2: color1})
     print(time.time()-start)
 def main(arg1):
         if plugs.artwork() == None:
@@ -36,10 +42,9 @@ def main(arg1):
             start = time.time()
             latest[0] = plugs.song()
             res = requests.get(plugs.artwork(), stream=True)
-            print("Downloading picture...")
             with open("somesong.png", 'wb') as f:
                 shutil.copyfileobj(res.raw,f)
-            resizing("somesong.png", "somesong.png", 8) #Found this value pretty good for my wallpaper
+            resizing("somesong.png", "somesong.png", 3) #Found this value pretty good for my wallpaper
             colour_and_brightness("somesong.png")
             print(len(colour2))
             img = Image.open(arg1).convert("RGBA")
@@ -68,9 +73,9 @@ def main(arg1):
                     else:
                         ndata.append(colour2[colour[search]])"""
             img.putdata(ndata)
-            img.save("wallpapermodpil.png", "PNG")
-            img = Image.open("wallpapermodpil.png")
-            subprocess.Popen(shlex.split(f'swww img ~/spotifywall/wallpapermodpil.png'), stdout=subprocess.PIPE)
+            img.save(f"thewallpaper.png", "PNG")
+            subprocess.Popen(shlex.split(f"swww img ~/spotifywall/thewallpaper.png"), stdout=subprocess.PIPE)
+            subprocess.Popen(shlex.split("wal -i ~/spotifywall/thewallpaper.png"), stdout=subprocess.PIPE)
             print(time.time()-start)
 
 while True:
