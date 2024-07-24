@@ -24,12 +24,12 @@ def colour_and_brightness(pic):
     img = Image.open(pic).convert("RGB")
     data = img.getdata()
     for i in data:
-        bright = math.floor((i[0]*299+i[1]*587+i[2]*144) / 1000)
+        bright = round((i[0]*299+i[1]*587+i[2]*144) / 1000)
         color = i[0],i[1],i[2]
         colour2.update({bright: color})
         owo = [1, 0.95, 0.9, 0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5, 0.45, 0.4, 0.35]
         for o in owo:
-            bright2 = math.floor((i[0]*o*299+i[1]*o*587+i[2]*o*144) / 1000)
+            bright2 = round((i[0]*o*299+i[1]*o*587+i[2]*o*144) / 1000)
             color1 = round(i[0]*o), round(i[1]*o), round(i[2]*o)
             colour2.update({bright2: color1})
     print(time.time()-start)
